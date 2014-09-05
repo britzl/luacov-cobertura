@@ -1,11 +1,3 @@
---- Example of basic luacov reporter
---
--- Installation
---   copy this file to luacov/reporter/dummy.lua
---
--- Usage
---   call `luacov -r cobertura`
-
 local luacov_reporter = require("luacov.reporter")
 local luatoxml = require("luacov.cobertura.luatoxml")
 

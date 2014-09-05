@@ -22,7 +22,7 @@ optional arguments:
 
 The configuration file may contain a cobertura.filenameparser function that can be used to manipulate the filenames in the stat file:
 ```
-return {
+local configuration = {
 	-- standard luacov configuration keys and values here
 	statsfile = "foobar",
 
@@ -36,4 +36,5 @@ return {
 		end,
 	},
 }
+return configuration
 ```
