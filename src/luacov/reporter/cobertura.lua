@@ -16,10 +16,10 @@ function cobertura_reporter:new(conf)
 		return nil, err
 	end
 
-	if conf.cobertura.nameparser then
+	if conf.cobertura.filenameparser then
 		local parsed_data = {}
 		for filename,stats in pairs(o._data) do
-			local parsed_filename = conf.cobertura.nameparser(filename)
+			local parsed_filename = conf.cobertura.filenameparser(filename)
 			parsed_data[parsed_filename] = stats
 		end
 		o._data = parsed_data
