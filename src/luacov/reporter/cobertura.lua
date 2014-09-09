@@ -89,7 +89,7 @@ function cobertura_reporter:on_mis_line(filename, lineno, line)
 end
 
 function cobertura_reporter:on_hit_line(filename, lineno, line, hits)
-	table.insert(self.current_class.lines, { line = { number = line_nr, hits = hits, branch = false } })
+	table.insert(self.current_class.lines, { line = { number = lineno, hits = hits, branch = false } })
 end
 
 --- Handle when a file has been completely parsed from start to end
