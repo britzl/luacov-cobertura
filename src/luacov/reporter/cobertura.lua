@@ -20,7 +20,9 @@ function cobertura_reporter:new(conf)
 		local parsed_data = {}
 		for filename,stats in pairs(o._data) do
 			local parsed_filename = conf.cobertura.filenameparser(filename)
-			parsed_data[parsed_filename] = stats
+			if parsed_data[parsed_filename] == nil or parsed_data[parsed_filename].max < stats.max then
+				parsed_data[parsed_filename] = stats
+			end
 		end
 		o._data = parsed_data
 	end
