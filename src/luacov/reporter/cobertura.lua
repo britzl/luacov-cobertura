@@ -15,7 +15,7 @@ function cobertura_reporter:new(conf)
 	if not o then
 		return nil, err
 	end
-	
+
 	if conf.cobertura.nameparser then
 		local parsed_data = {}
 		for filename,stats in pairs(o._data) do
@@ -24,7 +24,7 @@ function cobertura_reporter:new(conf)
 		end
 		o._data = parsed_data
 	end
-	
+
 	return o
 end
 
@@ -39,7 +39,7 @@ function cobertura_reporter:on_start()
 			packages = {}
 		}
 	}
-	
+
 	self.summaries = {}
 end
 
@@ -65,7 +65,7 @@ function cobertura_reporter:on_new_file(filename)
 		}
 		table.insert(self.cobertura.coverage.packages, { package = package })
 	end
-	
+
 
 	local class = {
 		name = class_name,
@@ -77,7 +77,7 @@ function cobertura_reporter:on_new_file(filename)
 		lines = {},
 	}
 	table.insert(package.classes, { class = class })
-	
+
 	self.current_package = package
 	self.current_class = class
 end
@@ -86,6 +86,7 @@ function cobertura_reporter:on_empty_line(filename, lineno, line)
 end
 
 function cobertura_reporter:on_mis_line(filename, lineno, line)
+	table.insert(self.current_class.lines, { line = { number = lineno, hits = 0, branch = false } })
 end
 
 function cobertura_reporter:on_hit_line(filename, lineno, line, hits)
@@ -125,7 +126,7 @@ function cobertura_reporter:on_end()
 		total_miss = total_miss + summary.miss
 	end
 	self.cobertura.coverage["line-rate"] = (total_hits / (total_hits + total_miss))
-	
+
 	local xml = luatoxml.toxml(self.cobertura)
 	self:write(xml)
 end
