@@ -18,13 +18,16 @@ function cobertura_reporter:new(conf)
 
 	if conf.cobertura.filenameparser then
 		local parsed_data = {}
+		local files = {}
 		for filename,stats in pairs(o._data) do
 			local parsed_filename = conf.cobertura.filenameparser(filename)
 			if parsed_data[parsed_filename] == nil or parsed_data[parsed_filename].max < stats.max then
 				parsed_data[parsed_filename] = stats
+				table.insert(files, parsed_filename)
 			end
 		end
 		o._data = parsed_data
+		o._files = files
 	end
 
 	return o
