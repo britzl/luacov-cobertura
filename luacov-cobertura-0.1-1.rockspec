@@ -1,15 +1,11 @@
-package = "LuaCov-Cobertura"
-version = "scm-1"
+package = "luacov-cobertura"
+version = "0.1-1"
 source = {
    url = "git@github.com:krux/luacov-cobertura.git",
+   tag = "v0.1",
 }
 description = {
    summary = "LuaCov to Cobertura report generator",
-   description = [[
-    This is a fork of https://github.com/britzl/luacov-cobertura
-    to generate and publish rockspec to luarocks
-   ]]
-   maintainer = "siddharthsharma@salesforce.com",
    homepage = "https://github.com/krux/luacov-cobertura",
    license = "MIT"
 }
