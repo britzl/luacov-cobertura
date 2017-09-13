@@ -3,12 +3,12 @@ luacov-cobertura
 
 LuaCov to Cobertura report generator
 
-##Usage
+## Usage
 
  * Run tests with enabled [LuaCov](https://github.com/keplerproject/luacov)
  * Run `luacov-cobertura`
 
-###Command line arguments
+### Command line arguments
 ```
 luacov-cobertura [-h] [-c FILE] [-o FILE]
 
@@ -18,7 +18,7 @@ optional arguments:
   -o FILE       output file
 ```
 
-###Cobertura specific configuration
+### Cobertura specific configuration
 
 The configuration file may contain a cobertura.filenameparser function that can be used to manipulate the filenames in the stat file:
 ```
