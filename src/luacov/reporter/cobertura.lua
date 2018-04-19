@@ -38,9 +38,13 @@ function cobertura_reporter:on_start()
 		coverage = {
 			["line-rate"] = 0,
 			["branch-rate"] = 0,
+			["branches-covered"] = 0,
+			["branches-valid"] = 0,
+			["complexity"] = 0,
+			["lines-covered"] = 0,
+			["lines-valid"] = 0,
 			version = "1.9",
 			timestamp = os.time() * 1000,
-			sources = {},
 			packages = {}
 		}
 	}
