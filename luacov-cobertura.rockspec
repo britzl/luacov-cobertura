@@ -15,12 +15,12 @@ dependencies = {
 build = {
   type = "builtin",
   modules = {
-    ["luacov.cobertura.luatoxml"] = "src/luacov/cobertura/luatoxml.lua",
-    ["luacov.reporter.cobertura"] = "src/luacov/reporter/cobertura.lua"
+    ["luacov.cobertura.luatoxml"] = "luacov/cobertura/luatoxml.lua",
+    ["luacov.reporter.cobertura"] = "luacov/reporter/cobertura.lua"
   },
   install = {
       bin = {
-        ['luacov-cobertura'] = 'src/bin/luacov-cobertura'
+        ['luacov-cobertura'] = 'bin/luacov-cobertura'
       }
     }
 }
