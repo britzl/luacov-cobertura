@@ -38,9 +38,13 @@ function cobertura_reporter:on_start()
 		coverage = {
 			["line-rate"] = 0,
 			["branch-rate"] = 0,
+			["branches-covered"] = 0,
+			["branches-valid"] = 0,
+			["complexity"] = 0,
+			["lines-covered"] = 0,
+			["lines-valid"] = 0,
 			version = "1.9",
 			timestamp = os.time() * 1000,
-			sources = {},
 			packages = {}
 		}
 	}
@@ -131,7 +135,9 @@ function cobertura_reporter:on_end()
 		total_miss = total_miss + summary.miss
 	end
 	self.cobertura.coverage["line-rate"] = (total_hits / (total_hits + total_miss))
-
+	self.cobertura.coverage["lines-covered"] = total_hits
+	self.cobertura.coverage["lines-valid"] = total_hits + total_miss
+	
 	local xml = luatoxml.toxml(self.cobertura)
 	self:write(xml)
 end
