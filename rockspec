@@ -1,5 +1,5 @@
 package = "luacov-cobertura"
-version = "1.0-0"
+version = "1.1-0"
 source = {
   url = "https://github.com/britzl/luacov-cobertura/archive/master.zip",
   dir = "luacov-cobertura-master"
