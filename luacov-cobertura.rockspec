@@ -1,8 +1,8 @@
 package = "luacov-cobertura"
 version = "1.1-0"
 source = {
-  url = "https://github.com/britzl/luacov-cobertura/archive/master.zip",
-  dir = "luacov-cobertura-master"
+  url = "git://github.com/britzl/luacov-cobertura",
+  tag = "1.1.0",
 }
 description = {
   summary = "LuaCov to Cobertura report generator",
